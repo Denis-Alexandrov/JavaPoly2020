@@ -42,11 +42,11 @@ public class Robot implements Runnable, Communication{
     @Override
     public String getColor() {
         if (progress != "-/-") {
-            int number1 = Integer.parseInt(progress.substring(0, progress.indexOf('/')));
-            int number2 = Integer.parseInt(progress.substring(progress.indexOf('/') + 1));
-            if (number2 / number1 > 2) {
+            float number1 = Float.parseFloat(progress.substring(0, progress.indexOf('/')));
+            float number2 = Float.parseFloat(progress.substring(progress.indexOf('/') + 1));
+            if (number1 / number2 < 0.5) {
                 return ColorType.RED.getColor();
-            } else if (number2 / number1 > 1) {
+            } else if (number1 / number2 < 0.75) {
                 return ColorType.YELLOW.getColor();
             } else {
                 return ColorType.GREEN.getColor();
