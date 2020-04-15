@@ -40,10 +40,12 @@ public class Cabinet implements Communication {
                 }
             }
         }
-        try {
-            wait();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        if (console.getCountWorkingRobots() > 1) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
         return null;
     }

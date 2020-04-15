@@ -21,7 +21,7 @@ public class Generator implements Runnable, Communication {
             count++;
             cabinet.addStudent(new Student());
             try {
-                Thread.sleep(500);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

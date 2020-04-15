@@ -23,5 +23,6 @@ public class Main {
         service.execute(robot1);
         service.execute(robot2);
         service.execute(robot3);
+        service.shutdown();
     }
 }

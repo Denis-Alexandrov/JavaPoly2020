@@ -21,20 +21,22 @@ public class Robot implements Runnable, Communication{
     @Override
     public void run() {
         while (true) {
-            try {
-                Student student = cabinet.getStudent(type);
-                if (student != null) {
-                    while (student.checkProgress()) {
-                        Thread.sleep(500);
-                        student.progress(PERFORMANCE);
-                        progress = student.getProgress() + "/" + student.getLoad();
-                        console.print();
+            Student student = cabinet.getStudent(type);
+            if (student != null) {
+                while (student.checkProgress()) {
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
-                    progress = "-/-";
+                    student.progress(PERFORMANCE);
+                    progress = student.getProgress() + "/" + student.getLoad();
                     console.print();
                 }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                progress = "-/-";
+                console.print();
+            } else if (console.checkGenerators() == false) {
+                break;
             }
         }
     }
