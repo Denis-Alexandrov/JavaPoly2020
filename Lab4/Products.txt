@@ -1,0 +1,12 @@
+Bread 50
+Eggs 71
+Butter 150
+Tea 75
+Apples 40
+Pears 77
+Oranges 70
+Pasta 45
+Tomatoes 90
+Carrots 20
+Potatoes 40
+Strawberry 140
