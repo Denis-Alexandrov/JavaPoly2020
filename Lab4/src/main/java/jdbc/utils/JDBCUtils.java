@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class JDBCUtils {
 
     public static Connection getNewConnection() throws SQLException {
-        String dbURL = "jdbc:h2:C:\\Users\\79006\\test";
+        String dbURL = "jdbc:h2:~\\test";
         Connection connection = DriverManager.getConnection(dbURL, "root", "");
         if (connection.isValid(1)) {
             System.out.println("Connection successful");
